@@ -95,7 +95,7 @@ def create_app():
     api_app.include_router(runs_router, prefix="/runs")
     api_app.include_router(tags_router, prefix="/tags")
 
-    app.mount("api", api_app)
+    app.mount("/api", api_app)
     static_files_app = FastAPI(root_path=base_path)
 
     static_files_app.include_router(statics_router)
